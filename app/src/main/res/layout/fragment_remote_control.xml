@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bravia Remote"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_power"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Power"
+            android:textColor="#F44336"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_title"
+            app:strokeColor="#F44336" />
+
+        <!-- アプリ起動ボタン -->
+        <LinearLayout
+            android:id="@+id/layout_apps"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_power">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_youtube"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="YouTube"
+                android:textColor="#FF0000" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_netflix"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Netflix"
+                android:textColor="#E50914" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_tv"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TV"
+                android:textColor="#2196F3" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_demo_mode"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Demo"
+                android:textColor="#4CAF50" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_input"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Input Source"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_apps" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_dpad"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/dpad_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_input">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_up"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:text="▲"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_left"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:text="◀"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_confirm"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:text="OK"
+                app:cornerRadius="36dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_right"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:text="▶"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_down"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:text="▼"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_back"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Back"
+            app:layout_constraintEnd_toStartOf="@id/btn_home"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_dpad" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_home"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Home"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_back"
+            app:layout_constraintTop_toBottomOf="@id/layout_dpad" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_back">
+
+            <LinearLayout
+                android:id="@+id/layout_ch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/remote_control_bg"
+                android:orientation="vertical"
+                android:padding="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/btn_mute"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_ch_up"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="+" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="CH" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_ch_down"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="-" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_mute"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mute"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/layout_vol"
+                app:layout_constraintStart_toEndOf="@+id/layout_ch"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/layout_vol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/remote_control_bg"
+                android:orientation="vertical"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_mute"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_vol_up"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="+" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="VOL" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_vol_down"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="-" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

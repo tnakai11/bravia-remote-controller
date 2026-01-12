@@ -59,6 +59,7 @@ class BraviaClient(ipAddress: String, private val psk: String) {
                 "system" -> api.system(psk, request)
                 "audio" -> api.audio(psk, request)
                 "appControl" -> api.appControl(psk, request)
+                "avContent" -> api.avContent(psk, request)
                 else -> throw IllegalArgumentException("Unknown service: $service")
             }
         } catch (_: Exception) {

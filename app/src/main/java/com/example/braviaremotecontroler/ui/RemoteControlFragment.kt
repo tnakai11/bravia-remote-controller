@@ -49,6 +49,7 @@ class RemoteControlFragment : Fragment() {
         binding.btnYoutube.setOnClickListener { sendCommand(it) { m -> m.youtube() } }
         binding.btnNetflix.setOnClickListener { sendCommand(it) { m -> m.netflix() } }
         binding.btnTv.setOnClickListener { sendCommand(it) { m -> m.tv() } }
+        binding.btnGguide.setOnClickListener { sendCommand(it) { m -> m.gguide() } }
         binding.btnDemoMode.setOnClickListener { sendCommand(it) { m -> m.demoMode() } }
 
         // 電源・入力

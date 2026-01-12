@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupNavigation(navController: NavController) {
         val topLevelDestinations = setOf(
             R.id.nav_remote_control,
+            R.id.nav_keyboard,
             R.id.nav_debug_remote,
             R.id.nav_settings
         )

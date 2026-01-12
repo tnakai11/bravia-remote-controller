@@ -23,6 +23,7 @@
         item
     </string>
     <string name="bravia_remote">Bravia Remote</string>
+    <string name="menu_keyboard">Keyboard</string>
 
     <!-- Settings Fragment -->
     <string name="settings_saved">Settings saved</string>
@@ -30,4 +31,12 @@
     <string name="settings_error_test_fill">Fill IP and PSK first</string>
     <string name="test_connection_success">Success: Connected to Bravia TV</string>
     <string name="test_connection_failed">Failed: Could not connect to TV. Check IP, PSK and Network.</string>
+
+    <!-- Keyboard Fragment -->
+    <string name="keyboard_hint">Enter text to send to TV</string>
+    <string name="button_send_text">Send Text</string>
+    <string name="text_sent_success">Text sent successfully</string>
+    <string name="text_sent_failed">Failed to send text</string>
+    <string name="button_youtube_search">YouTube Search</string>
+    <string name="youtube_typing_started">Starting YouTube cursor input...</string>
 </resources>

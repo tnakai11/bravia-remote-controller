@@ -9,6 +9,10 @@
             android:icon="@drawable/ic_tv_24dp"
             android:title="@string/bravia_remote" />
         <item
+            android:id="@+id/nav_keyboard"
+            android:icon="@drawable/ic_keyboard_black_24dp"
+            android:title="@string/menu_keyboard" />
+        <item
             android:id="@+id/nav_debug_remote"
             android:icon="@drawable/ic_slideshow_black_24dp"
             android:title="Debug" />

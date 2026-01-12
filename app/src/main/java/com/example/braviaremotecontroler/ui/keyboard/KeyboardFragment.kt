@@ -1,6 +1,7 @@
 package com.example.braviaremotecontroler.ui.keyboard
 
 import android.os.Bundle
+import android.view.HapticFeedbackConstants
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.braviaremotecontroler.R
+import com.example.braviaremotecontroler.api.BraviaRemoteManager
 import com.example.braviaremotecontroler.databinding.FragmentKeyboardBinding
 import com.example.braviaremotecontroler.ui.RemoteControlViewModel
 
@@ -63,12 +65,18 @@ class KeyboardFragment : Fragment() {
             }
         }
 
-        // 十字キーのセットアップ
-        binding.btnUp.setOnClickListener { viewModel.sendCommand { it.up() } }
-        binding.btnDown.setOnClickListener { viewModel.sendCommand { it.down() } }
-        binding.btnLeft.setOnClickListener { viewModel.sendCommand { it.left() } }
-        binding.btnRight.setOnClickListener { viewModel.sendCommand { it.right() } }
-        binding.btnConfirm.setOnClickListener { viewModel.sendCommand { it.confirm() } }
+        // 十字キーのセットアップ (RemoteControlFragmentと同じスタイル)
+        binding.btnUp.setOnClickListener { sendCommand(it) { m -> m.up() } }
+        binding.btnDown.setOnClickListener { sendCommand(it) { m -> m.down() } }
+        binding.btnLeft.setOnClickListener { sendCommand(it) { m -> m.left() } }
+        binding.btnRight.setOnClickListener { sendCommand(it) { m -> m.right() } }
+        binding.btnConfirm.setOnClickListener { sendCommand(it) { m -> m.confirm() } }
+
+        // Back, Mute, Volume Controls
+        binding.btnBack.setOnClickListener { sendCommand(it) { m -> m.back() } }
+        binding.btnMute.setOnClickListener { sendCommand(it) { m -> m.mute() } }
+        binding.btnVolUp.setOnClickListener { sendCommand(it) { m -> m.volumeUp() } }
+        binding.btnVolDown.setOnClickListener { sendCommand(it) { m -> m.volumeDown() } }
 
         viewModel.errorEvent.observe(viewLifecycleOwner) { error ->
             error?.let {
@@ -76,6 +84,14 @@ class KeyboardFragment : Fragment() {
                 viewModel.clearError()
             }
         }
+    }
+
+    /**
+     * 触覚フィードバックを実行し、ViewModelにコマンド送信を依頼します。
+     */
+    private fun sendCommand(view: View, action: suspend (BraviaRemoteManager) -> Unit) {
+        view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
+        viewModel.sendCommand(action)
     }
 
     override fun onDestroyView() {
